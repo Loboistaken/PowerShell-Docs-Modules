@@ -1,0 +1,81 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates a PowerShell object representing a Crescendo Parameter definition.
+module: Microsoft.PowerShell.Crescendo
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: New-CrescendoCommand
+  href: New-CrescendoCommand.yml
+- text: New-ExampleInfo
+  href: New-ExampleInfo.yml
+- text: New-OutputHandler
+  href: New-OutputHandler.yml
+- text: New-UsageInfo
+  href: New-UsageInfo.yml
+syntaxes:
+- New-ParameterInfo [-Name] <String> [-OriginalName] <String> [<CommonParameters>]
+examples:
+- title: Example 1 - Create a new parameter object
+  code: |-
+    $param = New-ParameterInfo -Name ComputerName -OriginalName '--targethost'
+    $param
+
+    Name                            : ComputerName
+    OriginalName                    : --targethost
+    OriginalText                    :
+    Description                     :
+    DefaultValue                    :
+    DefaultMissingValue             :
+    ApplyToExecutable               : False
+    ParameterType                   : object
+    AdditionalParameterAttributes   :
+    Mandatory                       : False
+    ParameterSetName                :
+    Aliases                         :
+    Position                        : 2147483647
+    OriginalPosition                : 0
+    ValueFromPipeline               : False
+    ValueFromPipelineByPropertyName : False
+    ValueFromRemainingArguments     : False
+    NoGap                           : False
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: Name
+  isRequired: true
+  description: |+
+    The name of the parameter for the cmdlet being defined.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: OriginalName
+  isRequired: true
+  description: |+
+    The original parameter used by the native executable.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Crescendo.New-ParameterInfo
+name: New-ParameterInfo
+description: |-
+  Creates a PowerShell object representing a Crescendo Parameter definition. You can assign values to
+  the properties of the object. The resulting object can be added to the **Parameters** property of
+  a command object or it can be converted to JSON to be inserted in the configuration file.
+metadata:
+  external help file: Microsoft.PowerShell.Crescendo-help.xml
+  Module Name: Microsoft.PowerShell.Crescendo
+  ms.date: 12/13/2022
+  online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.crescendo/new-parameterinfo?view=ps-modules&wt.mc_id=ps-gethelp
+  schema: 2.0.0

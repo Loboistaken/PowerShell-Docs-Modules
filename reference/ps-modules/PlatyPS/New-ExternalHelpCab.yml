@@ -1,0 +1,107 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Generates a `.cab` file.
+module: platyPS
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe values to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet doesn't generate output. The cmdlet saves its results in the output folder that the
+    **OutputPath** parameter specifies.
+links:
+- text: New-ExternalHelp
+  href: New-ExternalHelp.yml
+- text: New-MarkdownAboutHelp
+  href: New-MarkdownAboutHelp.yml
+syntaxes:
+- >-
+  New-ExternalHelpCab -CabFilesFolder <String> -LandingPagePath <String>
+
+   -OutputFolder <String>
+
+   [-IncrementHelpVersion] [<CommonParameters>]
+examples:
+- title: 'Example 1: Create a CAB file'
+  code: |-
+    $params = @{
+        CabFilesFolder  = 'C:\Module\ExternalHelpContent'
+        LandingPagePath = 'C:\Module\ModuleName.md'
+        OutputPath      = 'C:\Module\Cab\'
+    }
+    New-ExternalHelpCab @params
+  description: |-
+    The cmdlet creates a `.cab` file that contains the content folder files. The `.cab` file is named
+    for updatable help based on metadata. The command places the `.cab` file in the output folder.
+  summary: ""
+parameters:
+- type: <xref href="String" data-throw-if-not-resolved="False" />
+  name: CabFilesFolder
+  isRequired: true
+  description: |+
+    Specifies the folder that contains the help content that this cmdlet packages into a `.cab` file.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+  name: IncrementHelpVersion
+  description: |+
+    Automatically increment the help version in the module Markdown file.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="String" data-throw-if-not-resolved="False" />
+  name: LandingPagePath
+  isRequired: true
+  description: |+
+    Specifies the full path of the module Markdown file that contains all the metadata required to name
+    the `.cab` file. For the required metadata, run `New-MarkdownHelp` with the **WithLandingPage**
+    parameter.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="String" data-throw-if-not-resolved="False" />
+  name: OutputFolder
+  isRequired: true
+  description: |+
+    Specifies the location of the `.cab` file and `helpinfo.xml` file that this cmdlet creates.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: platyPS.New-ExternalHelpCab
+name: New-ExternalHelpCab
+description: |-
+  The `New-ExternalHelpCab` cmdlet generates a `.cab` file that contains all the non-recursive content
+  in a folder. This cmdlet compresses the provided files.
+
+  > [!NOTE]
+  > This cmdlet depends on the `MakeCab.exe` native command, which is only available on Windows. This
+  > cmdlet raises an error if used on non-Windows machines.
+
+  We recommend that you provide as content only about_ topics and the output from the
+  [New-ExternalHelp](New-ExternalHelp.yml) cmdlet to this cmdlet.
+
+  This cmdlet uses metadata stored in the module markdown file to name your `.cab` file. This naming
+  matches the pattern that the PowerShell help system requires for use as updatable help. This
+  metadata is part of the module file created using the [New-MarkdownHelp](New-MarkdownHelp.yml)
+  cmdlet with the **WithModulePage** parameter.
+
+  This cmdlet also generates or updates an existing `helpinfo.xml` file. That file provides versioning
+  and locale details to the PowerShell help system.
+metadata:
+  external help file: platyPS-help.xml
+  Module Name: platyPS
+  ms.date: 03/16/2021
+  online version: https://learn.microsoft.com/powershell/module/platyps/new-externalhelpcab?view=ps-modules&wt.mc_id=ps-gethelp
+  schema: 2.0.0

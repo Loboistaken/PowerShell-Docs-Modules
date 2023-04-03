@@ -1,0 +1,24 @@
+### YamlMime:PowershellModule
+children:
+- title: PSScriptAnalyzer
+  cmdlets:
+  - PSScriptAnalyzer.Get-ScriptAnalyzerRule
+  - PSScriptAnalyzer.Invoke-Formatter
+  - PSScriptAnalyzer.Invoke-ScriptAnalyzer
+uid: PSScriptAnalyzer
+name: PSScriptAnalyzer
+description: |-
+  PSScriptAnalyzer is a static code checker for PowerShell modules and scripts. PSScriptAnalyzer
+  checks the quality of PowerShell code by running a set of rules.
+
+  > [!NOTE]
+  > Support for the module is limited. Please file issues in the source repository using the **This
+  > product** button in the Feedback section at the bottom of the page.
+metadata:
+  Download Help Link: https://aka.ms/ps-modules-help
+  Help Version: 1.21.0
+  Locale: en-US
+  Module Guid: d6245802-193d-4068-a631-8863a4342a18
+  Module Name: PSScriptAnalyzer
+  ms.custom: PSSA v1.21.0
+  ms.date: 10/07/2021

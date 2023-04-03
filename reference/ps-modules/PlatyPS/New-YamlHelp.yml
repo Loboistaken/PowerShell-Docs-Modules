@@ -1,0 +1,117 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Converts Markdown help into YAML to be read easily by external tools
+module: platyPS
+notes: ""
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: |-
+    You can pipe an array of paths to this cmdlet.
+outputs:
+- name: <xref href="System.IO.FileInfo" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: |-
+    This cmdlet returns a `FileInfo[]` object for created files.
+syntaxes:
+- New-YamlHelp [-Path] <String[]> -OutputFolder <String> [-Encoding <Encoding>] [-Force] [<CommonParameters>]
+examples:
+- title: 'Example 1: Create YAML files'
+  code: |-
+    PS C:\> New-YamlHelp -Path .\docs -OutputFolder .\out\yaml
+
+        Directory: D:\Working\PlatyPS\out\yaml
+
+
+    Mode                LastWriteTime         Length Name
+    ----                -------------         ------ ----
+    -a----        6/15/2017  11:13 AM           2337 Get-HelpPreview.yml
+    -a----        6/15/2017  11:13 AM           3502 Get-MarkdownMetadata.yml
+    -a----        6/15/2017  11:13 AM           4143 New-ExternalHelp.yml
+    -a----        6/15/2017  11:13 AM           3082 New-ExternalHelpCab.yml
+    -a----        6/15/2017  11:13 AM           2581 New-MarkdownAboutHelp.yml
+    -a----        6/15/2017  11:13 AM          12356 New-MarkdownHelp.yml
+    -a----        6/15/2017  11:13 AM           1681 New-YamlHelp.yml
+    -a----        6/15/2017  11:13 AM           5053 Update-MarkdownHelp.yml
+    -a----        6/15/2017  11:13 AM           4661 Update-MarkdownHelpModule.yml
+    -a----        6/15/2017  11:13 AM           3350 Update-MarkdownHelpSchema.yml
+  description: |-
+    This creates one YAML file for each cmdlet so external tools can read the structured data for each
+    cmdlet.
+  summary: ""
+- title: 'Example 2: Create YAML files with specific encoding'
+  code: |-
+    PS C:\> New-YamlHelp -Path .\docs -OutputFolder .\out\yaml -Force -Encoding ([System.Text.Encoding]::Unicode)
+
+        Directory: D:\Working\PlatyPS\out\yaml
+
+
+    Mode                LastWriteTime         Length Name
+    ----                -------------         ------ ----
+    -a----        6/15/2017  11:13 AM           2337 Get-HelpPreview.yml
+    -a----        6/15/2017  11:13 AM           3502 Get-MarkdownMetadata.yml
+    -a----        6/15/2017  11:13 AM           4143 New-ExternalHelp.yml
+    -a----        6/15/2017  11:13 AM           3082 New-ExternalHelpCab.yml
+    -a----        6/15/2017  11:13 AM           2581 New-MarkdownAboutHelp.yml
+    -a----        6/15/2017  11:13 AM          12356 New-MarkdownHelp.yml
+    -a----        6/15/2017  11:13 AM           1681 New-YamlHelp.yml
+    -a----        6/15/2017  11:13 AM           5053 Update-MarkdownHelp.yml
+    -a----        6/15/2017  11:13 AM           4661 Update-MarkdownHelpModule.yml
+    -a----        6/15/2017  11:13 AM           3350 Update-MarkdownHelpSchema.yml
+  description: |-
+    This will both read and write the files in the specified -Encoding. The **Force** parameter will
+    overwrite files that already exist.
+  summary: ""
+parameters:
+- type: <xref href="Encoding" data-throw-if-not-resolved="False" />
+  name: Encoding
+  description: |+
+    Specifies the character encoding for your external help file. Specify a **System.Text.Encoding**
+    object. For more information, see
+    [about_Character_Encoding](/powershell/module/microsoft.powershell.core/about/about_character_encoding).
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Indicates that this cmdlet overwrites an existing file that has the same name.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="String" data-throw-if-not-resolved="False" />
+  name: OutputFolder
+  isRequired: true
+  description: |+
+    Specifies the folder to create the YAML files in
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies an array of paths of markdown files or folders. This cmdlet creates external help based on
+    these files and folders.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+uid: platyPS.New-YamlHelp
+name: New-YamlHelp
+description: |-
+  The `New-YamlHelp` cmdlet works similarly to the `New-ExternalHelp` cmdlet but rather than creating
+  a MAML file to support `Get-Help`, it creates a set of YAML files that can be read by external tools
+  to provide custom rendering of help pages.
+metadata:
+  external help file: platyPS-help.xml
+  Module Name: platyPS
+  ms.date: 03/16/2021
+  online version: https://learn.microsoft.com/powershell/module/platyps/new-yamlhelp?view=ps-modules&wt.mc_id=ps-gethelp
+  schema: 2.0.0

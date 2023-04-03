@@ -1,0 +1,29 @@
+### YamlMime:PowershellModule
+children:
+- title: Microsoft.PowerShell.Crescendo
+  cmdlets:
+  - Microsoft.PowerShell.Crescendo.Export-CrescendoCommand
+  - Microsoft.PowerShell.Crescendo.Export-CrescendoModule
+  - Microsoft.PowerShell.Crescendo.Export-Schema
+  - Microsoft.PowerShell.Crescendo.Import-CommandConfiguration
+  - Microsoft.PowerShell.Crescendo.New-CrescendoCommand
+  - Microsoft.PowerShell.Crescendo.New-ExampleInfo
+  - Microsoft.PowerShell.Crescendo.New-OutputHandler
+  - Microsoft.PowerShell.Crescendo.New-ParameterInfo
+  - Microsoft.PowerShell.Crescendo.New-UsageInfo
+  - Microsoft.PowerShell.Crescendo.Test-IsCrescendoCommand
+uid: Microsoft.PowerShell.Crescendo
+name: Microsoft.PowerShell.Crescendo
+description: |-
+  Crescendo is a development accelerator enabling you to rapidly build PowerShell cmdlets that
+  leverage existing command-line tools. Crescendo amplifies the command-line experience of the
+  original tool to include object output for the PowerShell pipeline, privilege elevation, and
+  integrated help information. A Crescendo module replaces cumbersome command-line tools with
+  PowerShell cmdlets that are easier to use in automation and packaged to share with team members.
+metadata:
+  Download Help Link: https://aka.ms/ps-modules-help
+  Help Version: 1.1.0
+  Locale: en-US
+  Module Guid: 2dd09744-1ced-4636-a8ce-09a0bf0e566a
+  Module Name: Microsoft.PowerShell.Crescendo
+  ms.date: 12/13/2022

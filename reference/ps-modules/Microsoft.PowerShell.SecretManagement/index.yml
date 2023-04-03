@@ -1,0 +1,38 @@
+### YamlMime:PowershellModule
+children:
+- title: Microsoft.PowerShell.SecretManagement
+  cmdlets:
+  - Microsoft.PowerShell.SecretManagement.Get-Secret
+  - Microsoft.PowerShell.SecretManagement.Get-SecretInfo
+  - Microsoft.PowerShell.SecretManagement.Get-SecretVault
+  - Microsoft.PowerShell.SecretManagement.Register-SecretVault
+  - Microsoft.PowerShell.SecretManagement.Remove-Secret
+  - Microsoft.PowerShell.SecretManagement.Set-Secret
+  - Microsoft.PowerShell.SecretManagement.Set-SecretInfo
+  - Microsoft.PowerShell.SecretManagement.Set-SecretVaultDefault
+  - Microsoft.PowerShell.SecretManagement.Test-SecretVault
+  - Microsoft.PowerShell.SecretManagement.Unregister-SecretVault
+uid: Microsoft.PowerShell.SecretManagement
+name: Microsoft.PowerShell.SecretManagement
+description: |-
+  PowerShell SecretManagement module provides a convenient way for a user to store and retrieve
+  secrets. The secrets are stored in SecretManagement extension vaults. An extension vault is a
+  PowerShell module that has been registered to SecretManagement, and exports five module functions
+  required by SecretManagement. An extension vault can store secrets locally or remotely. Extension
+  vaults are registered to the current logged in user context, and are available only to that user.
+
+  > [!NOTE]
+  > This module is supported under traditional Microsoft support agreements, including
+  > [paid support](https://support.microsoft.com/hub/4343728/support-for-business),
+  > [Microsoft Enterprise Agreements](https://www.microsoft.com/licensing/licensing-programs/enterprise?rtc=1&activetab=enterprise-tab%3aprimaryr2),
+  > and [Microsoft Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx).
+  > You can also pay for [support](https://support.microsoft.com/contactus) for PowerShell by filing a
+  > support request for your problem. Please file issues in the source repository using the
+  > **This product** button in the Feedback section at the bottom of the page.
+metadata:
+  Module Name: Microsoft.PowerShell.SecretManagement
+  Module Guid: a5c858f6-4a8e-41f1-b1ee-0ff8f6ad69d3
+  ms.date: 05/31/2022
+  Download Help Link: https://aka.ms/ps-modules-help
+  Help Version: 0.1.0.0
+  Locale: en-US

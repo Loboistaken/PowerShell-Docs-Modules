@@ -1,0 +1,32 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Exports the JSON schema for command configuration as a PowerShell object.
+module: Microsoft.PowerShell.Crescendo
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Import-CommandConfiguration
+  href: Import-CommandConfiguration.yml
+syntaxes:
+- Export-Schema
+examples:
+- title: Example 1
+  code: |-
+    Export-Schema
+  description: ""
+  summary: ""
+uid: Microsoft.PowerShell.Crescendo.Export-Schema
+name: Export-Schema
+description: |-
+  Exports the JSON schema for command configuration as a PowerShell object.
+metadata:
+  external help file: Microsoft.PowerShell.Crescendo-help.xml
+  Module Name: Microsoft.PowerShell.Crescendo
+  ms.date: 12/13/2022
+  online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.crescendo/export-schema?view=ps-modules&wt.mc_id=ps-gethelp
+  schema: 2.0.0

@@ -1,0 +1,80 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates a PowerShell object representing an example used in a Crescendo command object.
+module: Microsoft.PowerShell.Crescendo
+notes: ""
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: New-CrescendoCommand
+  href: New-CrescendoCommand.yml
+- text: New-OutputHandler
+  href: New-OutputHandler.yml
+- text: New-ParameterInfo
+  href: New-ParameterInfo.yml
+- text: New-UsageInfo
+  href: New-UsageInfo.yml
+syntaxes:
+- >-
+  New-ExampleInfo [-command] <String> [-description] <String> [[-originalCommand] <String>]
+
+   [<CommonParameters>]
+examples:
+- title: Example 1
+  code: |-
+    New-ExampleInfo -command Get-Something -originalCommand native.exe -description 'this is some text' |
+        ConvertTo-Json
+
+    {
+      "Command": "Get-Something",
+      "OriginalCommand": "native.exe",
+      "Description": "this is some text"
+    }
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: command
+  isRequired: true
+  description: |+
+    The command line for the example being described.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: description
+  isRequired: true
+  description: |+
+    The description of the example.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: originalCommand
+  description: |+
+    The original native command that's run for this cmdlet example.
+
+  defaultValue: None
+  position: "2"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Crescendo.New-ExampleInfo
+name: New-ExampleInfo
+description: |-
+  Creates a PowerShell object representing an example used in a Crescendo command object. The
+  resulting object can be converted to JSON to be inserted into a configuration file or added to a
+  command object conversion to JSON later.
+metadata:
+  external help file: Microsoft.PowerShell.Crescendo-help.xml
+  Module Name: Microsoft.PowerShell.Crescendo
+  ms.date: 12/13/2022
+  online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.crescendo/new-exampleinfo?view=ps-modules&wt.mc_id=ps-gethelp
+  schema: 2.0.0

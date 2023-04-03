@@ -1,0 +1,140 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates JSON configuration files for Crescendo **Command** objects.
+module: Microsoft.PowerShell.Crescendo
+notes: ""
+inputs:
+- name: <xref href="Command" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+links:
+- text: Export-CrescendoModule
+  href: Export-CrescendoModule.yml
+- text: Import-CommandConfiguration
+  href: Import-CommandConfiguration.yml
+syntaxes:
+- >-
+  Export-CrescendoCommand [-command] <Command[]> [-targetDirectory <String>] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+- >-
+  Export-CrescendoCommand [-command] <Command[]> -fileName <String> [-Force] [-WhatIf] [-Confirm]
+
+   [<CommonParameters>]
+examples:
+- title: Example 1 - Create separate JSON files per command
+  code: |-
+    $config = Import-CommandConfiguration C:\projects\vssadmin\vssadmin.crescendo.config.json
+    Export-CrescendoCommand -command $config -targetDirectory .
+    Get-ChildItem
+
+    Directory: D:\temp\Crescendo
+
+    Mode                 LastWriteTime         Length Name
+    ----                 -------------         ------ ----
+    -a---          12/13/2022  3:24 PM            869 Get-VssProvider.crescendo.json
+    -a---          12/13/2022  3:24 PM           3483 Get-VssShadow.crescendo.json
+    -a---          12/13/2022  3:24 PM           2474 Get-VssShadowStorage.crescendo.json
+    -a---          12/13/2022  3:24 PM            863 Get-VssVolume.crescendo.json
+    -a---          12/13/2022  3:24 PM            860 Get-VssWriter.crescendo.json
+    -a---          12/13/2022  3:24 PM           4973 Resize-VssShadowStorage.crescendo.json
+  description: ""
+  summary: |+
+    In this example, **Command** objects are imported from an existing JSON configuration file.
+    `Export-CrescendoCommand` is used to create separate JSON files for each cmdlet.
+
+- title: Example 2 - Create a new JSON configuration file for existing commands
+  code: |-
+    $config = Import-CommandConfiguration C:\projects\vssadmin\vssadmin.crescendo.config.json
+    Export-CrescendoCommand -command $config -fileName VssAdmin.crescendo.json
+    Get-ChildItem
+
+    Directory: D:\temp\Crescendo
+
+    Mode                 LastWriteTime         Length Name
+    ----                 -------------         ------ ----
+    -a---          12/13/2022  3:10 PM          15313 VssAdmin.crescendo.json
+  description: |-
+    The new JSON file contains new properties for the current version of Crescendo and references the
+    new schema URL. This is a convenient way to convert an old JSON configuration file to the new
+    format.
+  summary: |+
+    In this example, **Command** objects are imported from an existing JSON configuration file.
+    `Export-CrescendoCommand` is used to create a new JSON configuration file containing all the
+    commands.
+
+parameters:
+- type: <xref href="Command" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: command
+  isRequired: true
+  description: |+
+    One or more Crescendo **Command** objects to be exported.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+  defaultValue: None
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: fileName
+  isRequired: true
+  description: |+
+    The name of the JSON file to create.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Force
+  description: |+
+    Overwrite existing files.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: targetDirectory
+  description: |+
+    The output location for the JSON files created for each **Command** object.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet isn't run.
+
+  defaultValue: None
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Crescendo.Export-CrescendoCommand
+name: Export-CrescendoCommand
+description: |-
+  This cmdlet creates JSON configuration files for Crescendo **Command** objects. It can create one
+  JSON file per **Command** object or create one JSON file containing all objects passed to it.
+
+  Crescendo **Command** objects can be created using `New-CrescendoCommand` or imported from an
+  existing configuration using `Import-CommandConfiguration`.
+
+  This cmdlet was added in **Microsoft.PowerShell.Crescendo** v1.1.
+metadata:
+  external help file: Microsoft.PowerShell.Crescendo-help.xml
+  Module Name: Microsoft.PowerShell.Crescendo
+  ms.date: 12/13/2022
+  schema: 2.0.0

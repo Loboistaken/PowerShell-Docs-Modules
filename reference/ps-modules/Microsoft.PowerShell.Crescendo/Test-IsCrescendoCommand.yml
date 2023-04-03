@@ -1,0 +1,59 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Tests whether a cmdlet was created by Crescendo.
+module: Microsoft.PowerShell.Crescendo
+notes: ""
+inputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: ""
+syntaxes:
+- Test-IsCrescendoCommand [-Command] <Object[]> [<CommonParameters>]
+examples:
+- title: Example 1 - Test various cmdlet to see if they were created by Crescendo
+  code: |-
+    Test-IsCrescendoCommand Get-Command
+
+    Test-IsCrescendoCommand: 'Get-Command' is not a function
+
+    Test-IsCrescendoCommand Expand-Archive
+
+    Module: Microsoft.PowerShell.Archive
+
+    Name           IsCrescendoCommand RequiresElevation
+    ----           ------------------ -----------------
+    Expand-Archive False              False
+
+    Test-IsCrescendoCommand Get-VssProvider
+
+    Module: VssAdmin
+
+    Name            IsCrescendoCommand RequiresElevation
+    ----            ------------------ -----------------
+    Get-VssProvider True               False
+  description: ""
+  summary: ""
+parameters:
+- type: <xref href="Object" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Command
+  isRequired: true
+  description: |+
+    The name of the cmdlet to test.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Crescendo.Test-IsCrescendoCommand
+name: Test-IsCrescendoCommand
+description: |-
+  Tests a cmdlet to see if it was created by Crescendo.
+metadata:
+  external help file: Microsoft.PowerShell.Crescendo-help.xml
+  Module Name: Microsoft.PowerShell.Crescendo
+  ms.date: 12/13/2022
+  online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.crescendo/test-iscrescendocommand?view=ps-modules&wt.mc_id=ps-gethelp
+  schema: 2.0.0

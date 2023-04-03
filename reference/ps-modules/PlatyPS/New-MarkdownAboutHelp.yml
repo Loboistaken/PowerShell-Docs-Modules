@@ -1,0 +1,85 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Generates a new About Topic MD file from template.
+module: platyPS
+notes: |-
+  The about topics will need to be added to a cab file to leverage updatable help.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: ""
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a object for created files.
+links:
+- text: New-ExternalHelp
+  href: New-ExternalHelp.yml
+- text: New-ExternalHelpCab
+  href: New-ExternalHelpCab.yml
+syntaxes:
+- New-MarkdownAboutHelp [-OutputFolder] <String> [[-AboutName] <String>] [<CommonParameters>]
+examples:
+- title: Example 1
+  code: |-
+    PS C:\> New-MarkdownAboutHelp -OutputFolder C:\Test -AboutName
+    PS C:\> Get-ChildItem C:\Test
+
+        Directory: C:\Test
+
+
+    Mode                LastWriteTime         Length Name
+    ----                -------------         ------ ----
+    -a----        7/13/2016   2:12 PM           1491 TestAboutTopic.md
+  description: |-
+    Create and display file info for PowerShell About Topic Markdown File.
+  summary: ""
+- title: Example 2
+  code: |-
+    PS C:\> New-ExternalHelp -Path C:\Test\ -OutputPath C:\Test
+
+
+        Directory: C:\Test
+
+
+    Mode                LastWriteTime         Length Name
+    ----                -------------         ------ ----
+    -a----        7/13/2016   2:15 PM           1550 TestAboutTopic.txt
+  description: |-
+    Create PowerShell About Topic Txt file from existing Markdown About file.
+  summary: ""
+parameters:
+- type: <xref href="String" data-throw-if-not-resolved="False" />
+  name: AboutName
+  description: |+
+    The name of the about topic.
+
+  defaultValue: None
+  position: "1"
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="String" data-throw-if-not-resolved="False" />
+  name: OutputFolder
+  isRequired: true
+  description: |+
+    The directory to create the about topic in.
+
+  defaultValue: None
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: platyPS.New-MarkdownAboutHelp
+name: New-MarkdownAboutHelp
+description: |-
+  The `New-MarkdownAboutHelp` cmdlet generates a Markdown file that is prepopulated with the standard elements of an About Topic.
+  The cmdlet copies the template MD, renames headers and file name according to the **AboutName** parameter,
+  and deposits the file in the directory designated by the **OutputFoler** parameter.
+
+  The About Topic can be converted to Txt format.
+  About topics must be in txt format or the PowerShell Help engine will not be able to parse the document.
+  Use the [New-ExternalHelp](New-ExternalHelp.yml) cmdlet to convert About Topic markdown files into About Topic txt files.
+metadata:
+  external help file: platyPS-help.xml
+  Module Name: platyPS
+  ms.date: 03/16/2021
+  online version: https://learn.microsoft.com/powershell/module/platyps/new-markdownabouthelp?view=ps-modules&wt.mc_id=ps-gethelp
+  schema: 2.0.0

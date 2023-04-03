@@ -1,0 +1,29 @@
+### YamlMime:PowershellModule
+children:
+- title: platyPS
+  cmdlets:
+  - platyPS.Get-HelpPreview
+  - platyPS.Get-MarkdownMetadata
+  - platyPS.Merge-MarkdownHelp
+  - platyPS.New-ExternalHelp
+  - platyPS.New-ExternalHelpCab
+  - platyPS.New-MarkdownAboutHelp
+  - platyPS.New-MarkdownHelp
+  - platyPS.New-YamlHelp
+  - platyPS.Update-MarkdownHelp
+  - platyPS.Update-MarkdownHelpModule
+uid: platyPS
+name: platyPS
+description: |-
+  The platyPS module allows you to create PowerShell External Help in Markdown.
+
+  > [!NOTE]
+  > Support for the module is limited. Please file issues in the source repository using the **This
+  > product** button in the Feedback section at the bottom of the page.
+metadata:
+  Module Name: platyPS
+  Module Guid: 0bdcabef-a4b7-4a6d-bf7e-d879817ebbff
+  ms.date: 03/16/2021
+  Download Help Link: https://aka.ms/ps-modules-help
+  Help Version: 0.14.1
+  Locale: en-US

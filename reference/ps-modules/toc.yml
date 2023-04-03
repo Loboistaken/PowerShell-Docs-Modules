@@ -1,0 +1,104 @@
+items:
+- name: Reference
+  items:
+  - name: Microsoft.PowerShell.Crescendo
+    uid: Microsoft.PowerShell.Crescendo
+    items:
+    - name: About
+      items:
+      - name: about_Crescendo
+        href: Microsoft.PowerShell.Crescendo/About/about_Crescendo.md
+    - name: Export-CrescendoCommand
+      uid: Microsoft.PowerShell.Crescendo.Export-CrescendoCommand
+    - name: Export-CrescendoModule
+      uid: Microsoft.PowerShell.Crescendo.Export-CrescendoModule
+    - name: Export-Schema
+      uid: Microsoft.PowerShell.Crescendo.Export-Schema
+    - name: Import-CommandConfiguration
+      uid: Microsoft.PowerShell.Crescendo.Import-CommandConfiguration
+    - name: New-CrescendoCommand
+      uid: Microsoft.PowerShell.Crescendo.New-CrescendoCommand
+    - name: New-ExampleInfo
+      uid: Microsoft.PowerShell.Crescendo.New-ExampleInfo
+    - name: New-OutputHandler
+      uid: Microsoft.PowerShell.Crescendo.New-OutputHandler
+    - name: New-ParameterInfo
+      uid: Microsoft.PowerShell.Crescendo.New-ParameterInfo
+    - name: New-UsageInfo
+      uid: Microsoft.PowerShell.Crescendo.New-UsageInfo
+    - name: Test-IsCrescendoCommand
+      uid: Microsoft.PowerShell.Crescendo.Test-IsCrescendoCommand
+  - name: Microsoft.PowerShell.SecretManagement
+    uid: Microsoft.PowerShell.SecretManagement
+    items:
+    - name: Get-Secret
+      uid: Microsoft.PowerShell.SecretManagement.Get-Secret
+    - name: Get-SecretInfo
+      uid: Microsoft.PowerShell.SecretManagement.Get-SecretInfo
+    - name: Get-SecretVault
+      uid: Microsoft.PowerShell.SecretManagement.Get-SecretVault
+    - name: Register-SecretVault
+      uid: Microsoft.PowerShell.SecretManagement.Register-SecretVault
+    - name: Remove-Secret
+      uid: Microsoft.PowerShell.SecretManagement.Remove-Secret
+    - name: Set-Secret
+      uid: Microsoft.PowerShell.SecretManagement.Set-Secret
+    - name: Set-SecretInfo
+      uid: Microsoft.PowerShell.SecretManagement.Set-SecretInfo
+    - name: Set-SecretVaultDefault
+      uid: Microsoft.PowerShell.SecretManagement.Set-SecretVaultDefault
+    - name: Test-SecretVault
+      uid: Microsoft.PowerShell.SecretManagement.Test-SecretVault
+    - name: Unregister-SecretVault
+      uid: Microsoft.PowerShell.SecretManagement.Unregister-SecretVault
+  - name: Microsoft.PowerShell.SecretStore
+    uid: Microsoft.PowerShell.SecretStore
+    items:
+    - name: Get-SecretStoreConfiguration
+      uid: Microsoft.PowerShell.SecretStore.Get-SecretStoreConfiguration
+    - name: Reset-SecretStore
+      uid: Microsoft.PowerShell.SecretStore.Reset-SecretStore
+    - name: Set-SecretStoreConfiguration
+      uid: Microsoft.PowerShell.SecretStore.Set-SecretStoreConfiguration
+    - name: Set-SecretStorePassword
+      uid: Microsoft.PowerShell.SecretStore.Set-SecretStorePassword
+    - name: Unlock-SecretStore
+      uid: Microsoft.PowerShell.SecretStore.Unlock-SecretStore
+  - name: platyPS
+    uid: platyPS
+    items:
+    - name: About
+      items:
+      - name: about_platyPS
+        href: PlatyPS/About/about_platyPS.md
+    - name: Get-HelpPreview
+      uid: platyPS.Get-HelpPreview
+    - name: Get-MarkdownMetadata
+      uid: platyPS.Get-MarkdownMetadata
+    - name: Merge-MarkdownHelp
+      uid: platyPS.Merge-MarkdownHelp
+    - name: New-ExternalHelp
+      uid: platyPS.New-ExternalHelp
+    - name: New-ExternalHelpCab
+      uid: platyPS.New-ExternalHelpCab
+    - name: New-MarkdownAboutHelp
+      uid: platyPS.New-MarkdownAboutHelp
+    - name: New-MarkdownHelp
+      uid: platyPS.New-MarkdownHelp
+    - name: New-YamlHelp
+      uid: platyPS.New-YamlHelp
+    - name: Update-MarkdownHelp
+      uid: platyPS.Update-MarkdownHelp
+    - name: Update-MarkdownHelpModule
+      uid: platyPS.Update-MarkdownHelpModule
+  - name: PSScriptAnalyzer
+    uid: PSScriptAnalyzer
+    items:
+    - name: Get-ScriptAnalyzerRule
+      uid: PSScriptAnalyzer.Get-ScriptAnalyzerRule
+    - name: Invoke-Formatter
+      uid: PSScriptAnalyzer.Invoke-Formatter
+    - name: Invoke-ScriptAnalyzer
+      uid: PSScriptAnalyzer.Invoke-ScriptAnalyzer
+metadata:
+  universal_conceptual_toc: /powershell/utility-modules/ce/toc.json

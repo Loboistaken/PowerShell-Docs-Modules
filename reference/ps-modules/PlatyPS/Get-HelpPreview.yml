@@ -1,0 +1,80 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Displays your generated external help as `Get-Help` output.
+module: platyPS
+notes: ""
+inputs:
+- name: <xref href="String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  description: |-
+    You can pipe an array of paths to this cmdlet.
+outputs:
+- name: <xref href="Help Object" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a **Help** object, which is the same output as `Get-Help`.
+syntaxes:
+- Get-HelpPreview -Path <String[]> [-ConvertNotesToList] [-ConvertDoubleDashLists] [<CommonParameters>]
+examples:
+- title: 'Example 1: Preview the PlatyPS help'
+  code: |-
+    PS C:\> $Help = Get-HelpPreview -Path ".\out\platyPS\en-US\PlatyPS-help.xml"
+    PS C:\> $Help.Name
+
+    Get-HelpPreview
+    Get-MarkdownMetadata
+    New-ExternalHelp
+    New-ExternalHelpCab
+    New-MarkdownHelp
+    Update-MarkdownHelp
+    Update-MarkdownHelpModule
+    Update-MarkdownHelpSchema
+  description: |-
+    The first command creates a **Help** object for the the specified MAML file.
+    The command stores it in the $Help variable.
+
+    The second command displays the **Name** property for each of the objects in $Help.
+  summary: ""
+parameters:
+- type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ConvertDoubleDashLists
+  description: |+
+    Indicates that this cmdlet converts double-hyphen list bullets into single-hyphen bullets.
+    Double-hyphen lists are common in Windows PowerShell documentation. Markdown accepts single-hyphens
+    for lists.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+  name: ConvertNotesToList
+  description: |+
+    Indicates that this cmdlet formats multiple paragraph items in the **NOTES** section as single list items.
+    This output follows TechNet formatting.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+  name: Path
+  isRequired: true
+  description: |+
+    Specifies an array of paths of MAML external help files.
+
+  defaultValue: None
+  acceptWildcardCharacters: true
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: platyPS.Get-HelpPreview
+name: Get-HelpPreview
+description: |-
+  The `Get-HelpPreview` cmdlet displays your generated external help as `Get-Help` output.
+  Specify one or more files in Microsoft Assistance Markup Language (MAML) format.
+metadata:
+  external help file: platyPS-help.xml
+  Module Name: platyPS
+  ms.date: 03/16/2021
+  online version: https://learn.microsoft.com/powershell/module/platyps/get-helppreview?view=ps-modules&wt.mc_id=ps-gethelp
+  schema: 2.0.0
